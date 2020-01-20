@@ -19,8 +19,23 @@ namespace YoutubeExplode.Internal
 
                 // Serialize all the things
                 #if NET45 || NETSTANDARD2_0
+                Console.WriteLine("==========");
+                Console.WriteLine("Request:");
                 Console.WriteLine(JsonConvert.SerializeObject(request));
+                Console.WriteLine("==========");
+                Console.WriteLine("Response:");
                 Console.WriteLine(JsonConvert.SerializeObject(response));
+
+                if (response.Content.Headers.ContentType.MediaType == "text/html" ||
+                    response.Content.Headers.ContentType.MediaType == "application/json" ||
+                    response.Content.Headers.ContentType.MediaType == "application/x-www-form-urlencoded")
+                {
+                    Console.WriteLine("==========");
+                    Console.WriteLine("Body:");
+                    Console.WriteLine(await response.Content.ReadAsStringAsync());
+                }
+
+                Console.WriteLine("==========");
                 #endif
 
                 return response;
