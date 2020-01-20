@@ -1,13 +1,32 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Threading;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace YoutubeExplode.Internal
 {
     internal static class HttpClientEx
     {
+        private class DiagHttpClientHandler : HttpClientHandler
+        {
+            protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+            {
+                var response = await base.SendAsync(request, cancellationToken);
+
+                // Serialize all the things
+                #if NET45 || NETSTANDARD2_0
+                Console.WriteLine(JsonConvert.SerializeObject(request));
+                Console.WriteLine(JsonConvert.SerializeObject(response));
+                #endif
+
+                return response;
+            }
+        }
+
         private static HttpClient? _singleton;
 
         public static HttpClient GetSingleton()
@@ -17,7 +36,7 @@ namespace YoutubeExplode.Internal
                 return _singleton;
 
             // Configure handler
-            var handler = new HttpClientHandler();
+            var handler = new DiagHttpClientHandler();
             if (handler.SupportsAutomaticDecompression)
                 handler.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
             handler.UseCookies = false;
