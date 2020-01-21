@@ -17,7 +17,7 @@ namespace YoutubeExplode.Internal
             {
                 var response = await base.SendAsync(request, cancellationToken);
 
-                // Serialize all the things
+                // Serialize all the things 1
                 #if NET45 || NETSTANDARD2_0
                 Console.WriteLine("==========");
                 Console.WriteLine("Request:");

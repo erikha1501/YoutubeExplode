@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Tyrrrz\.nuget\packages\microsoft.net.test.sdk\16.3.0\build\netcoreapp1.0" t="Include">
+      <e p="Microsoft.NET.Test.Sdk.Program.cs" t="Include" />
+    </e>
+    <e p="C:\Users\Tyrrrz\.nuget\packages\microsoft.testplatform.testhost\16.3.0\build\netcoreapp2.1\x64\testhost.dll" t="Include" />
+    <e p="C:\Users\Tyrrrz\.nuget\packages\microsoft.testplatform.testhost\16.3.0\build\netcoreapp2.1\x64\testhost.exe" t="Include" />
+    <e p="C:\Users\Tyrrrz\.nuget\packages\nunit3testadapter\3.15.1\build\netcoreapp2.0\nunit.engine.api.dll" t="Include" />
+    <e p="C:\Users\Tyrrrz\.nuget\packages\nunit3testadapter\3.15.1\build\netcoreapp2.0\nunit.engine.dll" t="Include" />
+    <e p="C:\Users\Tyrrrz\.nuget\packages\nunit3testadapter\3.15.1\build\netcoreapp2.0\NUnit3.TestAdapter.dll" t="Include" />
+    <e p="C:\Users\Tyrrrz\.nuget\packages\nunit3testadapter\3.15.1\build\netcoreapp2.0\NUnit3.TestAdapter.pdb" t="Include" />
+    <e p="C:\Users\Tyrrrz\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Tyrrrz\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_YoutubeExplode.-971777755.00" t="ExcludeRecursive" />
+    <e p="F:\Projects\Softdev\YoutubeExplode" t="IncludeFlat">
+      <e p="Changelog.md" t="Include" />
+      <e p="favicon.ico" t="Include" />
+      <e p="favicon.png" t="Include" />
+      <e p="License.txt" t="Include" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="ReadMe.md" t="Include" />
+      <e p="Solution Items" t="Include" />
+      <e p="YoutubeExplode" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Exceptions" t="Include">
+          <e p="UnrecognizedStructureException.cs" t="Include" />
+          <e p="VideoRequiresPurchaseException.cs" t="Include" />
+          <e p="VideoUnavailableException.cs" t="Include" />
+          <e p="VideoUnplayableException.cs" t="Include" />
+        </e>
+        <e p="Internal" t="Include">
+          <e p="CipherOperations" t="Include">
+            <e p="Extensions.cs" t="Include" />
+            <e p="ICipherOperation.cs" t="Include" />
+            <e p="ReverseCipherOperation.cs" t="Include" />
+            <e p="SliceCipherOperation.cs" t="Include" />
+            <e p="SwapCipherOperation.cs" t="Include" />
+          </e>
+          <e p="Extensions.cs" t="Include" />
+          <e p="Heuristics.cs" t="Include" />
+          <e p="HttpClientEx.cs" t="Include" />
+          <e p="PlayerConfiguration.cs" t="Include" />
+          <e p="SegmentedHttpStream.cs" t="Include" />
+          <e p="Url.cs" t="Include" />
+        </e>
+        <e p="IYoutubeClient.cs" t="Include" />
+        <e p="Models" t="Include">
+          <e p="Channel.cs" t="Include" />
+          <e p="ClosedCaptions" t="Include">
+            <e p="ClosedCaption.cs" t="Include" />
+            <e p="ClosedCaptionTrack.cs" t="Include" />
+            <e p="ClosedCaptionTrackInfo.cs" t="Include" />
+            <e p="Extensions.cs" t="Include" />
+            <e p="Language.cs" t="Include" />
+          </e>
+          <e p="Extensions.cs" t="Include" />
+          <e p="MediaStreams" t="Include">
+            <e p="AudioEncoding.cs" t="Include" />
+            <e p="AudioStreamInfo.cs" t="Include" />
+            <e p="Container.cs" t="Include" />
+            <e p="Extensions.cs" t="Include" />
+            <e p="MediaStream.cs" t="Include" />
+            <e p="MediaStreamInfo.cs" t="Include" />
+            <e p="MediaStreamInfoSet.cs" t="Include" />
+            <e p="MuxedStreamInfo.cs" t="Include" />
+            <e p="VideoEncoding.cs" t="Include" />
+            <e p="VideoQuality.cs" t="Include" />
+            <e p="VideoResolution.cs" t="Include" />
+            <e p="VideoStreamInfo.cs" t="Include" />
+          </e>
+          <e p="Playlist.cs" t="Include" />
+          <e p="PlaylistType.cs" t="Include" />
+          <e p="Statistics.cs" t="Include" />
+          <e p="ThumbnailSet.cs" t="Include" />
+          <e p="Video.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="net45" t="Include">
+              <e p="NuGet" t="Include">
+                <e p="19160AC6D414A32D4D55BFAA08FFF5371BE60C0E" t="Include">
+                  <e p="Nullable" t="Include">
+                    <e p="1.1.1" t="Include">
+                      <e p="Nullable" t="Include">
+                        <e p="NullableAttributes.cs" t="Include" />
+                      </e>
+                    </e>
+                  </e>
+                </e>
+              </e>
+              <e p="YoutubeExplode.AssemblyInfo.cs" t="Include" />
+            </e>
+            <e p="netstandard1.1" t="Include">
+              <e p="NuGet" t="Include">
+                <e p="19160AC6D414A32D4D55BFAA08FFF5371BE60C0E" t="Include">
+                  <e p="Nullable" t="Include">
+                    <e p="1.1.1" t="Include">
+                      <e p="Nullable" t="Include">
+                        <e p="NullableAttributes.cs" t="Include" />
+                      </e>
+                    </e>
+                  </e>
+                </e>
+              </e>
+              <e p="YoutubeExplode.AssemblyInfo.cs" t="Include" />
+            </e>
+            <e p="netstandard2.0" t="Include">
+              <e p="NuGet" t="Include">
+                <e p="19160AC6D414A32D4D55BFAA08FFF5371BE60C0E" t="Include">
+                  <e p="Nullable" t="Include">
+                    <e p="1.1.1" t="Include">
+                      <e p="Nullable" t="Include">
+                        <e p="NullableAttributes.cs" t="Include" />
+                      </e>
+                    </e>
+                  </e>
+                </e>
+              </e>
+              <e p="YoutubeExplode.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="YoutubeClient.Channel.cs" t="Include" />
+        <e p="YoutubeClient.ClosedCaptionTrack.cs" t="Include" />
+        <e p="YoutubeClient.cs" t="Include" />
+        <e p="YoutubeClient.MediaStream.cs" t="Include" />
+        <e p="YoutubeClient.Playlist.cs" t="Include" />
+        <e p="YoutubeClient.Search.cs" t="Include" />
+        <e p="YoutubeClient.Static.cs" t="Include" />
+        <e p="YoutubeClient.Video.cs" t="Include" />
+        <e p="YoutubeExplode.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="YoutubeExplode.DemoConsole" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Internal" t="Include">
+          <e p="InlineProgress.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.0" t="Include">
+              <e p="YoutubeExplode.DemoConsole.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="ReadMe.md" t="Include" />
+        <e p="YoutubeExplode.DemoConsole.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="YoutubeExplode.DemoWpf" t="IncludeRecursive">
+        <e p="App.xaml" t="Include" />
+        <e p="App.xaml.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Converters" t="Include">
+          <e p="ArrayToStringConverter.cs" t="Include" />
+          <e p="BoolToStringConverter.cs" t="Include" />
+          <e p="BoolToVisibilityConverter.cs" t="Include" />
+          <e p="FileSizeToStringConverter.cs" t="Include" />
+        </e>
+        <e p="Locator.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.0" t="Include">
+              <e p="App.g.cs" t="Include" />
+              <e p="GeneratedInternalTypeHelper.g.cs" t="Include" />
+              <e p="Views" t="Include">
+                <e p="MainWindow.g.cs" t="Include" />
+              </e>
+              <e p="YoutubeExplode.DemoWpf.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="ReadMe.md" t="Include" />
+        <e p="ViewModels" t="Include">
+          <e p="MainViewModel.cs" t="Include" />
+        </e>
+        <e p="Views" t="Include">
+          <e p="MainWindow.xaml" t="Include" />
+          <e p="MainWindow.xaml.cs" t="Include" />
+        </e>
+        <e p="YoutubeExplode.DemoWpf.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="YoutubeExplode.sln" t="IncludeFlat" />
+      <e p="YoutubeExplode.Tests" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="ModelsUnitTests.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.0" t="Include">
+              <e p="YoutubeExplode.Tests.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="TestData.cs" t="Include" />
+        <e p="YoutubeClientIntegrationTests.cs" t="Include" />
+        <e p="YoutubeClientUnitTests.cs" t="Include" />
+        <e p="YoutubeExplode.Tests.csproj" t="IncludeRecursive" />
+      </e>
+    </e>
+  </component>
+</project>
