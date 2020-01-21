@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using LtGt;
 using LtGt.Models;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using YoutubeExplode.Exceptions;
 using YoutubeExplode.Internal;
@@ -28,7 +29,11 @@ namespace YoutubeExplode
 
             // Execute request
             var url = $"https://youtube.com/get_video_info?video_id={videoId}&el=embedded&eurl={eurl}&hl=en";
-            var raw = await _httpClient.GetStringAsync(url).ConfigureAwait(false);
+            var raw = await _httpClient.GetStringAsync(url, false).ConfigureAwait(false);
+
+            #if NET45 || NETSTANDARD2_0
+            Console.WriteLine(raw);
+            #endif
 
             // Parse response as URL-encoded dictionary
             var result = Url.SplitQuery(raw);
@@ -453,7 +458,7 @@ namespace YoutubeExplode
 
                         url = cipherDic["url"];
                         var signature = cipherDic["s"];
-                        
+
                         // Get cipher operations (cached)
                         var cipherOperations = await GetCipherOperationsAsync(playerConfiguration.PlayerSourceUrl).ConfigureAwait(false);
 
