@@ -28,12 +28,8 @@ namespace YoutubeExplode
             var eurl = $"https://youtube.googleapis.com/v/{videoId}".UrlEncode();
 
             // Execute request
-            var url = $"https://youtube.com/get_video_info?video_id={videoId}&el=embedded&eurl={eurl}&hl=en";
-            var raw = await _httpClient.GetStringAsync(url, false).ConfigureAwait(false);
-
-            #if NET45 || NETSTANDARD2_0
-            Console.WriteLine(raw);
-            #endif
+            var url = $"https://youtube.com/get_video_info?video_id={videoId}&el=embedded&eurl={eurl}&hl=en&qqq={Guid.NewGuid()}";
+            var raw = await _httpClient.GetStringAsync(url).ConfigureAwait(false);
 
             // Parse response as URL-encoded dictionary
             var result = Url.SplitQuery(raw);
