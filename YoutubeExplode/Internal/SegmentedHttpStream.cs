@@ -11,16 +11,18 @@ namespace YoutubeExplode.Internal
         private readonly HttpClient _httpClient;
         private readonly string _url;
         private readonly long _segmentSize;
+        private readonly int _retryLimit;
 
         private Stream? _currentStream;
         private long _position;
 
-        public SegmentedHttpStream(HttpClient httpClient, string url, long length, long segmentSize)
+        public SegmentedHttpStream(HttpClient httpClient, string url, long length, long segmentSize, int retryLimit = 5)
         {
             _url = url;
             _httpClient = httpClient;
             Length = length;
             _segmentSize = segmentSize;
+            _retryLimit = retryLimit;
         }
 
         public override bool CanRead => true;
@@ -59,29 +61,41 @@ namespace YoutubeExplode.Internal
             if (Position >= Length)
                 return 0;
 
-            // If current stream is not set - resolve it
-            if (_currentStream == null)
+            int retryCount = 0;
+
+            // Try to read until got something or retry limit has been exceeded
+            while (true)
             {
-                _currentStream = await _httpClient.GetStreamAsync(_url, Position, Position + _segmentSize - 1).ConfigureAwait(false);
-            }
+                // If current stream is not set - resolve it
+                if (_currentStream == null)
+                {
+                    _currentStream = await _httpClient.GetStreamAsync(_url, Position, Position + _segmentSize - 1).ConfigureAwait(false);
+                }
 
-            // Read from current stream
-            var bytesRead = await _currentStream.ReadAsync(buffer, offset, count, cancellationToken).ConfigureAwait(false);
+                try
+                {
+                    // Read from current stream
+                    var bytesRead = await _currentStream.ReadAsync(buffer, offset, count, cancellationToken).ConfigureAwait(false);
 
-            // Advance the position (using field directly to avoid clearing stream)
-            _position += bytesRead;
+                    if (bytesRead > 0)
+                    {
+                        // Advance the position (using field directly to avoid clearing stream)
+                        _position += bytesRead;
+                        return bytesRead;
+                    }
+                }
+                catch (IOException)
+                {
+                    // Rethow if reach retry limit
+                    if (retryCount++ > _retryLimit)
+                    {
+                        throw;
+                    }
+                }
 
-            // If no bytes have been read - resolve a new stream
-            if (bytesRead == 0)
-            {
-                // Clear current stream
+                // If no bytes have been read - resolve a new stream
                 ClearCurrentStream();
-
-                // Recursively read again
-                bytesRead = await ReadAsync(buffer, offset, count, cancellationToken).ConfigureAwait(false);
             }
-
-            return bytesRead;
         }
 
         public override int Read(byte[] buffer, int offset, int count) =>
